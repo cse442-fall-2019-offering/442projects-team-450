@@ -12,7 +12,7 @@ namespace Team450Project.Pages
 
         public void OnGet()
         {
-            Message = "OUR application description page.";
+            Message = "Our application description page.";
         }
     }
 }
