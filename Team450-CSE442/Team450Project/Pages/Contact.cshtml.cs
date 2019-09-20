@@ -10,9 +10,12 @@ namespace Team450Project.Pages
     {
         public string Message { get; set; }
 
+        public string Message1 { get; set; }
+
         public void OnGet()
         {
-            Message = "Your contact page.";
+            Message = "Support";
+            Message1 = "Questions";
         }
     }
 }
