@@ -1,0 +1,31 @@
+﻿@page
+@model ScoreboardModel
+@{
+    ViewData["Title"] = "Scoreboard";
+}
+<h2>@ViewData["Title"]</h2>
+<h3>@Model.Message</h3>
+
+<table style="width:100%" border="1">
+    <tr>
+        <th>Username</th>
+        <th>Score</th>
+        <th>Mode</th>
+        <th>Date</th>
+        <th>Completion Time</th>
+    </tr>
+    <tr>
+        <td>Example name</td>
+        <td>Example value</td>
+        <td>Example mode</td>
+        <td>Example date</td>
+        <td>Example time</td>
+    </tr>
+    <tr>
+        <td>Edward Kim</td>
+        <td>Over 9000</td>
+        <td>Sicko</td>
+        <td>9/17/19</td>
+        <td>Less than 5 seconds</td>
+    </tr>
+</table>
