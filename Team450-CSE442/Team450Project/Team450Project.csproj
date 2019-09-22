@@ -17,6 +17,9 @@
     <Content Update="Pages\Home.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
+    <Content Update="Pages\Instructions.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
     <Content Update="Pages\Scoreboard.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
