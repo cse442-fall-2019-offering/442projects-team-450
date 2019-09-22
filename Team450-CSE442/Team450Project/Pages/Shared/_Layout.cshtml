@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Team450Project</title>
+    <title>@ViewData["Title"] - Team 450's Learning Center</title>
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -18,25 +18,50 @@
 </head>
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a asp-page="/Index" class="navbar-brand">Team450Project</a>
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a asp-page="/Index" class="navbar-brand">Team 450's Learning Center</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        
+                        @* The <li> </li> below this contains the dropdown menu for the Game Selection part of the nav bar*@
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Game Selection <span class="glyphicon glyphicon-menu-down"></span></a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" asp-page="/States">US States</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" asp-page="/Capitals">US Capitals</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" asp-page="/Puzzle">US Map Puzzle</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" asp-page="/Class">Class Mode</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" asp-page="/Instructions">How Do I Play?</a>
+                            </div>
+                        </li>
+
+                        <li><a asp-page="/Scoreboard">Scoreboard</a></li>
+                      
+                        @* The <li> </li> below this contains the dropdown menu for the Further Information part of the nav bar*@
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Further Information <span class="glyphicon glyphicon-menu-down"></span></a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" asp-page="/Contact">Contact Us</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" asp-page="/About">About the Team</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-page="/Index">Home</a></li>
-                    <li><a asp-page="/About">About</a></li>
-                    <li><a asp-page="/Contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+        </nav>
 
     <partial name="_CookieConsentPartial" />
 

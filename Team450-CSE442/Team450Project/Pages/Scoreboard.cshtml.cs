@@ -6,16 +6,13 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Team450Project.Pages
 {
-    public class ContactModel : PageModel
+    public class ScoreboardModel : PageModel
     {
         public string Message { get; set; }
 
-        public string Message1 { get; set; }
-
         public void OnGet()
         {
-            Message = "Support";
-            Message1 = "Questions";
+            Message = "View high scores here.";
         }
     }
 }
