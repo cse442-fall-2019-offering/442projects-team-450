@@ -1,6 +1,6 @@
 ﻿
 body, html {
-    height: 100%;
+    height: auto;
     width: auto;
 }
 
@@ -48,7 +48,9 @@ body, html {
     border: none;
     border-radius: 15px;
     box-shadow: 0 9px #999;
+    text-decoration: none;
 }
+
 
     #playButton:hover {
         background-color: #3e8e41
