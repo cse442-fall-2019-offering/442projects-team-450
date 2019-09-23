@@ -1,19 +1,19 @@
 ﻿@page
 @model ContactModel
 @{
-    ViewData["Title"] = "Contact";
+    ViewData["Title"] = "Contact Us";
 }
-<h2>@ViewData["Title"]</h2>
-<h3>@Model.Message</h3>
+<div align = "center">
+<h1>@ViewData["Title"]</h1>
+<h3>@Model.Message <span class=" glyphicon glyphicon-wrench"></span></h3>
 
 <address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
+    Issues with the website?<br />
+    Email us at <a href="mailto:Support@team450.com">Support@team450.com</a> for help.<br />
 </address>
-
+<h3>@Model.Message1 <span class=" glyphicon glyphicon-earphone"></span></h3>
 <address>
-    <strong>Support:</strong> <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+    Questions about the website?<br />
+    Email us at  <a href="mailto:Questions@team450.com">Questions@team450.com</a> to learn more.<br />
 </address>
+</div>
