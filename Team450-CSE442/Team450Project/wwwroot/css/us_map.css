@@ -115,6 +115,6 @@ button {
     display: none;
     position: absolute;
     z-index: 2;
-    padding: 100px 100px 100px 100px;
+    padding: 200px 100px 200px 100px;
     background-color: white;
 }
