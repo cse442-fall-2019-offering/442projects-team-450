@@ -20,7 +20,7 @@ function exitModule() {
     let state = document.getElementById(currentID);
 
     module.style.display = "none";
-    state.style.fill = "red";
+    //state.style.fill = "red";
 }
 
 function submitModule() {
