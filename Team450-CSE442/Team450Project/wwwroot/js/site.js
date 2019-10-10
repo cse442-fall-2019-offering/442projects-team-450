@@ -3,9 +3,11 @@
 
 // Write your Javascript code.
 let currentID = null;
+tries_left = 3;
 
 function openModule(id) {
     let module = document.getElementById("state_module");
+    if (module.style.display == "inline-block") return;
     let userInput = document.getElementById("input_textbox");
     let state = document.getElementById(id);
     currentID = id;
@@ -20,15 +22,26 @@ function exitModule() {
     let state = document.getElementById(currentID);
 
     module.style.display = "none";
-    //state.style.fill = "red";
+    state.style.fill = "#d3d3d3";
 }
 
 function submitModule() {
     let module = document.getElementById("state_module");
-    let userInput = document.getElementById("input_textbox");
+    let userInput = document.getElementById("input_textbox").value;
     let state = document.getElementById(currentID);
-
-    module.style.display = "none";
-    let userAnswer = userInput.value;
-    state.style.fill = "green";
+    if (userInput.toLowerCase() != state.getAttribute("state-name").toLowerCase()) {
+        tries_left--;
+        if (tries_left < 1) {
+            module.style.display = "none";
+            state.style.fill = "red";
+        }
+        else {
+            document.getElementById("tries_left").innerHTML = "Number of Attempts left: " + tries_left;
+        }
+    }
+    else {
+        module.style.display = "none";
+        state.style.fill = "green";
+        tries_left = 3;
+    }
 }
