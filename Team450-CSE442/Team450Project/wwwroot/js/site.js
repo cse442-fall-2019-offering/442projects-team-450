@@ -3,6 +3,11 @@
 
 // Write your Javascript code.
 let currentID = null;
+var h1 = document.getElementsByTagName('h1')[0],
+    sec = 0, min = 0, hour = 0,
+    t;
+let scoreBoard = document.getElementById('score');
+let currentScore = 0;
 
 // Opens the pop up box to answer question(s) about the state
 function openModule(id) {
@@ -59,6 +64,41 @@ function submitModule() {
         // If the user was correct, exit the module, turn the state green and reset the tries_left variable to 3
         module.style.display = "none";
         state.style.fill = "green";
+        currentScore++;
+        updateScore();
     }
     state.setAttribute("active", "0");
 }
+
+// Function that increments and displays time.
+function add() {
+
+    // Increments time, resets sec, min, etc. when corresponding counter reaches >= 60.
+    sec++;
+    if (sec >= 60) {
+        sec = 0;
+        min++;
+        if (min >= 60) {
+            min = 0;
+            hour++;
+        }
+    }
+
+    // Displays time.
+    h1.textContent = (hour ? (hour > 9 ? hour : "0" + hour) : "00") + ":" + (min ? (min > 9 ? min : "0" + min) : "00") + ":" + (sec > 9 ? sec : "0" + sec);
+
+    timer();
+}
+
+// Applies add() function to timer.
+function timer() {
+    t = setTimeout(add, 1000);
+}
+
+timer();
+
+function updateScore() {
+    scoreBoard.innerHTML = "Score: " + currentScore;
+}
+
+updateScore();

@@ -145,3 +145,11 @@ button {
     height: 12%;
     font-size: 20px;
 }
+
+#timer {
+    /* Stuff for timer goes here. */
+}
+
+#score {
+    font-size: 20px;
+}
