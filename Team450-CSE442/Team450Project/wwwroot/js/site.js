@@ -3,7 +3,7 @@
 
 // Write your Javascript code.
 let currentID = null;
-var h1 = document.getElementsByTagName('h1')[0],
+var timerHTML = document.getElementById("timerHTML"),
     sec = 0, min = 10, hour = 00,
     t;
 let scoreBoard = document.getElementById('score');
@@ -92,7 +92,7 @@ function add() {
     }
 
     // Displays time.
-    h1.textContent = (hour ? (hour > 9 ? hour : "0" + hour) : "00") + ":" + (min ? (min > 9 ? min : "0" + min) : "10") + ":" + (sec > 9 ? sec : "0" + sec);
+    timerHTML.textContent = (hour ? (hour > 9 ? hour : "0" + hour) : "00") + ":" + (min ? (min > 9 ? min : "0" + min) : "10") + ":" + (sec > 9 ? sec : "0" + sec);
 
     timer();
 }

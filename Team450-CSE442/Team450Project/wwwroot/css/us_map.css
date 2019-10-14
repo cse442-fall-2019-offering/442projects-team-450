@@ -149,9 +149,11 @@ button {
 #timer {
     /* Stuff for timer goes here. */
     position: absolute;
-    top: 5%;
+    top: 7%;
     left: 50%;
     z-index: 2;
+    font-size: 40px;
+    display: block;
 }
 
 #score {
