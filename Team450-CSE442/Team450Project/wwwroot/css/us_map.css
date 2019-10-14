@@ -148,8 +148,16 @@ button {
 
 #timer {
     /* Stuff for timer goes here. */
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    z-index: 2;
 }
 
 #score {
+    position: absolute;
+    left: 50%;
+    top: 12%;
     font-size: 20px;
+    z-index: 2;
 }
