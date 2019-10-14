@@ -4,7 +4,7 @@
 // Write your Javascript code.
 let currentID = null;
 var h1 = document.getElementsByTagName('h1')[0],
-    sec = 0, min = 0, hour = 0,
+    sec = 0, min = 10, hour = 00,
     t;
 let scoreBoard = document.getElementById('score');
 let currentScore = 0;
@@ -74,18 +74,18 @@ function submitModule() {
 function add() {
 
     // Increments time, resets sec, min, etc. when corresponding counter reaches >= 60.
-    sec++;
-    if (sec >= 60) {
-        sec = 0;
-        min++;
-        if (min >= 60) {
-            min = 0;
-            hour++;
+    sec--;
+    if (sec < 0) {
+        sec = 59;
+        min--;
+        if (min < 0) {
+            min = 59;
+            hour--;
         }
     }
 
     // Displays time.
-    h1.textContent = (hour ? (hour > 9 ? hour : "0" + hour) : "00") + ":" + (min ? (min > 9 ? min : "0" + min) : "00") + ":" + (sec > 9 ? sec : "0" + sec);
+    h1.textContent = (hour ? (hour > 9 ? hour : "0" + hour) : "00") + ":" + (min ? (min > 9 ? min : "0" + min) : "10") + ":" + (sec > 9 ? sec : "0" + sec);
 
     timer();
 }
