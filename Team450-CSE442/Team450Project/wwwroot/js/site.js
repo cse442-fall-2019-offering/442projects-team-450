@@ -28,6 +28,13 @@ function openModule(id) {
     module.style.display = "inline-block";
     state.style.fill = "yellow";
 
+    // Load image of corresponding state
+    let img = document.getElementById("state_image");
+    let stateName = state.getAttribute("state-name").toLowerCase();
+    let imgSrc = "/images/" + stateName + ".jpg";
+    console.log(imgSrc);
+    img.setAttribute("src", imgSrc);
+
     // Set user input to empty string
     userInput.value = "";
 }
