@@ -4,7 +4,7 @@
 // Write your Javascript code.
 let currentID = null;
 var timerHTML = document.getElementById("timerHTML"),
-    sec = 0, min = 10, hour = 00,
+    sec = 0, min = 10,
     t;
 let scoreBoard = document.getElementById('score');
 let currentScore = 0;
@@ -31,8 +31,7 @@ function openModule(id) {
     // Load image of corresponding state
     let img = document.getElementById("state_image");
     let stateName = state.getAttribute("state-name").toLowerCase();
-    let imgSrc = "/images/" + stateName + ".jpg";
-    console.log(imgSrc);
+    let imgSrc = "/images/" + stateName.replace(" ", "-") + ".jpg";
     img.setAttribute("src", imgSrc);
 
     // Set user input to empty string
@@ -62,6 +61,9 @@ function submitModule() {
 
     let state = document.getElementById(currentID);
 
+    console.log(userInput.toLowerCase());
+    console.log(state.getAttribute("state-name").toLowerCase());
+
     // Compares the user input and the state name to check for correctness (not case sensitive)
     if (userInput.toLowerCase() != state.getAttribute("state-name").toLowerCase()) {
         module.style.display = "none";
@@ -85,14 +87,10 @@ function add() {
     if (sec < 0) {
         sec = 59;
         min--;
-        if (min < 0) {
-            min = 59;
-            hour--;
-        }
     }
 
     // Displays time.
-    timerHTML.textContent = (hour ? (hour > 9 ? hour : "0" + hour) : "00") + ":" + (min ? (min > 9 ? min : "0" + min) : "10") + ":" + (sec > 9 ? sec : "0" + sec);
+    timerHTML.textContent = (min ? (min > 9 ? min : "0" + min) : "10") + ":" + (sec > 9 ? sec : "0" + sec);
 
     timer();
 }
