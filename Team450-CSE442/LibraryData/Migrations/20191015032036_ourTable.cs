@@ -1,8 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace LibraryData.Migrations
 {
-    public partial class InitialMigration : Migration
+    public partial class ourTable : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -10,14 +11,16 @@ namespace LibraryData.Migrations
                 name: "Patrons",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
+                    pk = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    FirstName = table.Column<string>(nullable: true),
-                    LastName = table.Column<string>(nullable: true)
+                    UserName = table.Column<string>(nullable: true),
+                    Score = table.Column<int>(nullable: false),
+                    Mode = table.Column<string>(nullable: true),
+                    DateCompl = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Patrons", x => x.Id);
+                    table.PrimaryKey("PK_Patrons", x => x.pk);
                 });
         }
 
