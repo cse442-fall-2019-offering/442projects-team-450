@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.EntityFrameworkCore;
+using LibraryData;
 
 namespace Team450Project
 {
@@ -18,8 +20,10 @@ namespace Team450Project
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
-        }
 
+            services.AddDbContext<LibraryContent>(options
+                => options.UseSqlServer(Configuration.GetConnectionString("LibraryConnection")));
+        }
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
