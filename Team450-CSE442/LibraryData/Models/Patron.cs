@@ -9,7 +9,7 @@ namespace LibraryData.Models
     public class Patron
     {
         [Key][DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int pk { get; set; }
+        public int Pk { get; set; }
         public string UserName { get; set; }
         public int Score { get; set; }
         public string Mode  { get; set; }
