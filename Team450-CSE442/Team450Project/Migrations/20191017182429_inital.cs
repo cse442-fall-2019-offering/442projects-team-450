@@ -1,33 +1,33 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace LibraryData.Migrations
+namespace Team450Project.Migrations
 {
-    public partial class ourTable : Migration
+    public partial class inital : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Patrons",
+                name: "ScoreBoard",
                 columns: table => new
                 {
-                    pk = table.Column<int>(nullable: false)
+                    ID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    UserName = table.Column<string>(nullable: true),
-                    Score = table.Column<int>(nullable: false),
+                    Usernamee = table.Column<string>(nullable: true),
+                    Date = table.Column<DateTime>(nullable: false),
                     Mode = table.Column<string>(nullable: true),
-                    DateCompl = table.Column<DateTime>(nullable: false)
+                    DateCompletion = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Patrons", x => x.pk);
+                    table.PrimaryKey("PK_ScoreBoard", x => x.ID);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Patrons");
+                name: "ScoreBoard");
         }
     }
 }
