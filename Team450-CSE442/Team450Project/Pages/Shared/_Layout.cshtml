@@ -26,7 +26,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a asp-page="/Index" class="navbar-brand">Team 450's Learning Center</a>
+                    <a asp-page="/Index" class="navbar-brand">Home</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
@@ -35,19 +35,19 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Game Selection <span class="glyphicon glyphicon-menu-down"></span></a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" asp-page="/States">US States</a>
+                                <a class="dropdown-item" asp-page="/US_Map">US States</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" asp-page="/Capitals">US Capitals</a>
+                                @*<a class="dropdown-item" asp-page="/Capitals">US Capitals</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" asp-page="/Puzzle">US Map Puzzle</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" asp-page="/Class">Class Mode</a>
-                                <div class="dropdown-divider"></div>
+                                <div class="dropdown-divider"></div>*@
                                 <a class="dropdown-item" asp-page="/Instructions">How Do I Play?</a>
                             </div>
                         </li>
 
-                        <li><a asp-page="/Scoreboard">Scoreboard</a></li>
+                        <li><a asp-page="/Scoreboard"><b>Scoreboard</b></a></li>
                       
                         @* The <li> </li> below this contains the dropdown menu for the Further Information part of the nav bar*@
                         <li class="nav-item dropdown">
