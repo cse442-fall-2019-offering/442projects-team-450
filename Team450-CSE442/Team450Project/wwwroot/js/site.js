@@ -9,7 +9,7 @@ var timerHTML = document.getElementById("timerHTML"),
 var scoreBoard = document.getElementById('score');
 var currentScore = 0;
 var gameActive = false;
-let stateCount = 0;
+var stateCount = 0;
 
 
 // Starts the game after hitting the start button
@@ -70,9 +70,6 @@ function submitModule() {
     let userInput = document.getElementById("input_textbox").value;
 
     let state = document.getElementById(currentID);
-
-    console.log(userInput.toLowerCase());
-    console.log(state.getAttribute("state-name").toLowerCase());
 
     // Compares the user input and the state name to check for correctness (not case sensitive)
     if (userInput.toLowerCase() != state.getAttribute("state-name").toLowerCase()) {
