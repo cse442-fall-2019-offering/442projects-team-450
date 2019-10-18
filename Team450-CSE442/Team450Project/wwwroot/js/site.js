@@ -6,6 +6,8 @@ var currentID = null;
 var timerHTML = document.getElementById("timerHTML"),
     sec = 0, min = 10,
     t;
+var scoreBoard = document.getElementById('score');
+var currentScore = 0;
 var gameActive = false;
 let stateCount = 0;
 
@@ -142,7 +144,7 @@ function add() {
 // Applies add() function to timer.
 function timer() {
     if ((min <= 0 && sec <= 0) || stateCount == 50) {
-        gameOver();_
+        gameOver();
     }
     else {
         t = setTimeout(add, 1000);
