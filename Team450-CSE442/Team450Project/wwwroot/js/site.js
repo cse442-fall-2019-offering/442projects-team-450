@@ -6,9 +6,8 @@ var currentID = null;
 var timerHTML = document.getElementById("timerHTML"),
     sec = 0, min = 10,
     t;
-var scoreBoard = document.getElementById('score');
-var currentScore = 0;
 var gameActive = false;
+let stateCount = 0;
 
 
 // Starts the game after hitting the start button
@@ -75,24 +74,60 @@ function submitModule() {
 
     // Compares the user input and the state name to check for correctness (not case sensitive)
     if (userInput.toLowerCase() != state.getAttribute("state-name").toLowerCase()) {
-        module.style.display = "none";
         state.style.fill = "red";
+        currentScore -= 2;
     }
     else {
         // If the user was correct, exit the module, turn the state green and reset the tries_left variable to 3
-        module.style.display = "none";
         state.style.fill = "green";
-        currentScore++;
-        updateScore();
+        currentScore += 5;
     }
+
+    module.style.display = "none";
+    updateScore();
+    stateCount++;
+
+    if (stateCount == 50) {
+        gameOver();
+    }
+
     state.setAttribute("active", "0");
+}
+
+// Activates the GAME OVER state.
+function gameOver() {
+    let module = document.getElementById("gameover_module");
+    let finalSB = document.getElementById("final_score");
+    let finalScore = currentScore + Math.floor(((min * 60) + sec) / 5);
+    let timeSB = document.getElementById("completion_time");
+    let finalMin = 10;
+    let finalSec = 0;
+
+    if (sec > 0) {
+        finalMin--;
+        finalSec = 60;
+    }
+    finalMin -= min;
+    finalSec -= sec;
+
+    module.style.display = "inline-block";
+    finalSB.innerHTML = "Your final score is: " + finalScore;
+
+    if (min <= 0 && sec <= 0) {
+        timeSB.innerHTML = "You ran out of time!";
+    }
+    else {
+        timeSB.innerHTML = "Completed in: " + finalMin + " minute(s) and " + finalSec + " second(s)!";
+    }
 }
 
 // Function that increments and displays time.
 function add() {
 
     // Increments time, resets sec, min, etc. when corresponding counter reaches >= 60.
-    sec--;
+
+    sec--;   
+
     if (sec < 0) {
         sec = 59;
         min--;
@@ -106,7 +141,12 @@ function add() {
 
 // Applies add() function to timer.
 function timer() {
-    t = setTimeout(add, 1000);
+    if ((min <= 0 && sec <= 0) || stateCount == 50) {
+        gameOver();_
+    }
+    else {
+        t = setTimeout(add, 1000);
+    }
 }
 
 function updateScore() {
