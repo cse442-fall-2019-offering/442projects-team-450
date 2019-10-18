@@ -2,12 +2,21 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your Javascript code.
-let currentID = null;
+var currentID = null;
 var timerHTML = document.getElementById("timerHTML"),
     sec = 0, min = 10,
     t;
-let scoreBoard = document.getElementById('score');
-let currentScore = 0;
+var scoreBoard = document.getElementById('score');
+var currentScore = 0;
+var gameActive = false;
+
+
+// Starts the game after hitting the start button
+function startGame() {
+    document.getElementById("pre_game_module").style = "display: none;"; // Hide pre-game screen
+    gameActive = true;
+    timer();
+}
 
 // Opens the pop up box to answer question(s) about the state
 function openModule(id) {
@@ -20,7 +29,7 @@ function openModule(id) {
     let state = document.getElementById(id);
 
     // If the module is already showing for another state, end function
-    if (module.style.display == "inline-block" || state.getAttribute("active") != "1") return;
+    if (module.style.display == "inline-block" || state.getAttribute("active") != "1" || !gameActive) return;
 
     currentID = id; // Update the id variable to the current selected state id
 
@@ -99,8 +108,6 @@ function add() {
 function timer() {
     t = setTimeout(add, 1000);
 }
-
-timer();
 
 function updateScore() {
     scoreBoard.innerHTML = "Score: " + currentScore;
