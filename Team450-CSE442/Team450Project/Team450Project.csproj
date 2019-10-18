@@ -17,9 +17,6 @@
     <Content Update="Pages\Home.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
-    <Content Update="Pages\US_Map.cshtml">
-      <Pack>$(IncludeRazorContentInPack)</Pack>
-    </Content>
     <Content Update="Pages\Instructions.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
