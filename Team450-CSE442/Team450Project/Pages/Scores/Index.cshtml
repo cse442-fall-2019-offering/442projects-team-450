@@ -14,7 +14,7 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.ScoreBoard[0].Usernamee)
+                @Html.DisplayNameFor(model => model.ScoreBoard[0].Username)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.ScoreBoard[0].Score)
@@ -26,7 +26,7 @@
                 @Html.DisplayNameFor(model => model.ScoreBoard[0].Mode)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ScoreBoard[0].TimeCompletion)
+                @Html.DisplayNameFor(model => model.ScoreBoard[0].CompletionTime)
             </th>
             <th></th>
         </tr>
@@ -35,7 +35,7 @@
 @foreach (var item in Model.ScoreBoard) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Usernamee)
+                @Html.DisplayFor(modelItem => item.Username)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Score)
@@ -47,7 +47,7 @@
                 @Html.DisplayFor(modelItem => item.Mode)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.TimeCompletion)
+                @Html.DisplayFor(modelItem => item.CompletionTime)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
