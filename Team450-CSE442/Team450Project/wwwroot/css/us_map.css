@@ -1,0 +1,252 @@
+﻿body {
+    font-family: 'Comic Sans MS';
+    text-align: center;
+}
+
+#us-map {
+    display: block;
+    position: absolute;
+    top: 7%;
+    width: 70%;
+    left: 15%;
+    height: 93%;
+    border: 2px groove black;
+}
+
+path:hover, circle:hover {
+    stroke: !important;
+    stroke-width: 2px;
+    stroke-linejoin: round;
+    fill: blue !important;
+    cursor: pointer;
+}
+
+#path67 {
+    fill: none !important;
+    stroke: black !important;
+    cursor: default;
+}
+
+#info-box {
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    background-color: #ffffff;
+    border: 4px solid #BF0A30;
+    border-radius: 10px;
+    padding: 5px;
+    font-family: arial;
+}
+
+svg {
+    position: absolute;
+    top: 0;
+    z-index: 1 !important;
+}
+
+#play {
+    color: white !important;
+    background-color: #39A96A;
+    align-items: center !important;
+    top: 50%;
+    left: 50%;
+    align-self: center !important;
+}
+
+#howtoplay {
+    color: white !important;
+    background-color: #3B9DC7;
+    align-self: center !important;
+}
+
+button {
+    margin: 0 auto;
+    display: block;
+    color: white !important;
+    background-color: #39A96A;
+}
+
+.flex-center {
+    margin: 40px auto;
+    background: rgba(0, 0, 0, 0);
+    color: white;
+    border: 0px solid white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 200px;
+    overflow: auto;
+    width: 240px;
+    height: 300px;
+}
+
+    .flex-center p {
+        margin: 0;
+        padding: 20px;
+        align-self: center !important;
+    }
+
+.bg-image {
+    filter: blur(0px);
+    -webkit-filter: blur(0px);
+}
+
+.bg-text {
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 0); /* Black w/opacity/see-through */
+    color: white;
+    font-weight: bold;
+    border: 0px solid #f1f1f1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 40%;
+    height: 40%;
+    padding: 0px;
+    text-align: center;
+}
+
+#pre_game_module {
+    font-size: 2vmin;
+    text-align: left;
+    top: 20%;
+    width: 40%;
+    left: 30%;
+    height: 50%;
+    z-index: 2;
+    position: absolute;
+    margin: auto;
+    padding: 3%;
+    background-color: white;
+    border: 3px groove #39A96A;
+    border-radius: 6px;
+}
+
+#pre_game_module h2 {
+    font-size: 5vmin;
+}
+
+#state_module {
+    font-size: 3vmin;
+    top: 20%;
+    width: 40%;
+    left: 30%;
+    height: 50%;
+    z-index: 2;
+    position: absolute;
+    margin: auto;
+    padding: 3%;
+    background-color: white;
+    border: 3px groove #39A96A;
+    border-radius: 6px;
+    display: none;
+}
+
+#gameover_module {
+    font-size: 3vmin;
+    top: 20%;
+    width: 40%;
+    left: 30%;
+    height: 50%;
+    z-index: 2;
+    position: absolute;
+    margin: auto;
+    padding: 3%;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 6px;
+    display: none;
+}
+
+#submit_form {
+    text-align: center;
+}
+
+#back_button {
+    position: absolute;
+    left: 3%;
+    bottom: 3%;
+    width: 20%;
+    height: 12%;
+}
+
+#mainmenu_button {
+    position: absolute;
+    left: 3%;
+    bottom: 3%;
+    width: 30%;
+    height: 20%;
+}
+
+#submit_button {
+    position: absolute;
+    right: 3%;
+    bottom: 3%;
+    width: 20%;
+    height: 12%;
+}
+
+#tryagain_button {
+    position: absolute;
+    right: 3%;
+    bottom: 3%;
+    width: 30%;
+    height: 20%;
+}
+
+#start_button {
+    position: absolute;
+    left: 7%;
+    bottom: 5%;
+    width: 16%;
+    height: 10%;
+}
+
+#timerHTML {
+    font-size: 4vmin;
+    position: absolute;
+    top: 15%;
+    left: 2%;
+    z-index: 2;
+}
+
+#score {
+    font-size: 3vmin;
+    position: absolute;
+    left: 2%;
+    top: 22%;
+    z-index: 2;
+}
+
+#state_image_container {
+    margin: auto;
+    height: 60%;
+    width: 70%;
+    left: 30%;
+}
+
+#state_image_container img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#input_textbox {
+    position: absolute;
+    bottom: 3%;
+    width: 48%;
+    height: 12%;
+    left: 26%;
+}
+
+#input_container p {
+    position: absolute;
+    bottom: 16%;
+    height: 12%;
+    width: 60%;
+    left: 20%;
+
+}
