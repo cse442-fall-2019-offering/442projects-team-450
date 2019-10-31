@@ -895,7 +895,14 @@ Citation:
         <div id="final_score"></div>
         <div id="completion_time"></div>
         <button id="tryagain_button" onclick="window.location.href='/US_Map'">Try again</button>
+        <button id="enter_score" onclick="openScore()">Add score to Leaderboard</button>
         <button id="mainmenu_button" onclick="window.location.href='/Index'">Main Menu</button>
+    </div>
+
+    <div id="enter_score_module">
+        <p>Name:</p>
+        <input type="text" />
+        <button onclick="submitScore()">Submit</button>
     </div>
 
 </body>

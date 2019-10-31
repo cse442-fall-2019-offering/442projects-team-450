@@ -86,7 +86,7 @@ function submitModule() {
     updateScore();
     stateCount++;
 
-    if (stateCount == 50) {
+    if (stateCount == 1) {
         gameOver();
     }
 
@@ -118,6 +118,17 @@ function gameOver() {
     else {
         timeSB.innerHTML = "Completed in: " + finalMin + " minute(s) and " + finalSec + " second(s)!";
     }
+}
+
+function openScore() {
+    let module = document.getElementById("enter_score_module");
+    module.style = "display: inline-block;";
+}
+
+function submitScore() {
+    let module = document.getElementById("enter_score_module");
+    let input = module.childNodes[1].value;
+    module.style = "display: none;";
 }
 
 // Function that increments and displays time.
