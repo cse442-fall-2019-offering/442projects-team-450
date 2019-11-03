@@ -194,7 +194,7 @@ function add() {
     }
 
     // Displays time.
-    timerHTML.textContent = (min ? (min > 9 ? min : "0" + min) : "10") + ":" + (sec > 9 ? sec : "0" + sec);
+    timerHTML.textContent = (min ? (min > 9 ? min : "0" + min) : "00") + ":" + (sec > 9 ? sec : "0" + sec);
 
     timer();
 }
