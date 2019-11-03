@@ -1,5 +1,4 @@
 ﻿body {
-    font-family: 'Comic Sans MS';
     text-align: center;
 }
 
@@ -111,6 +110,7 @@ button {
 }
 
 #pre_game_module {
+    font-family: 'Comic Sans MS';
     font-size: 2vmin;
     text-align: left;
     top: 20%;
@@ -131,6 +131,7 @@ button {
 }
 
 #state_module {
+    font-family: 'Comic Sans MS';
     font-size: 3vmin;
     top: 20%;
     width: 40%;
@@ -147,6 +148,7 @@ button {
 }
 
 #gameover_module {
+    font-family: 'Comic Sans MS';
     font-size: 3vmin;
     top: 20%;
     width: 40%;
@@ -219,6 +221,7 @@ button {
 }
 
 #timerHTML {
+    font-family: 'Comic Sans MS';
     font-size: 4vmin;
     position: absolute;
     top: 15%;
@@ -227,6 +230,7 @@ button {
 }
 
 #score {
+    font-family: 'Comic Sans MS';
     font-size: 3vmin;
     position: absolute;
     left: 2%;
