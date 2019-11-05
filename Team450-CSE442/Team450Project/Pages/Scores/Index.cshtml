@@ -5,11 +5,11 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+@*<h2>Index</h2>*@
 
-<p>
+@*<p>
     <a asp-page="Create">Create New</a>
-</p>
+</p>*@
 <table class="table">
     <thead>
         <tr>
@@ -26,7 +26,7 @@
                 @Html.DisplayNameFor(model => model.ScoreBoard[0].Mode)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ScoreBoard[0].CompletionTime)
+                Completion Time
             </th>
             <th></th>
         </tr>
@@ -49,11 +49,11 @@
             <td>
                 @Html.DisplayFor(modelItem => item.CompletionTime)
             </td>
-            <td>
+            @*<td>
                 <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
                 <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
                 <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
-            </td>
+            </td>*@
         </tr>
 }
     </tbody>
