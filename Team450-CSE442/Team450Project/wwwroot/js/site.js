@@ -12,12 +12,27 @@ var gameActive = false;
 var stateCount = 0;
 
 
+    var date = new Date();
+    var day = date.getDate();
+    var month = date.getMonth() + 1;
+    var year = date.getFullYear();
+
+    if (month < 10) month = "0" + month;
+    if (day < 10) day = "0" + day;
+
+    var today = year + "-" + month + "-" + day;
+    document.getElementById('theDate').value = today;
+
+
+
 // Starts the game after hitting the start button
 function startGame() {
     document.getElementById("pre_game_module").style = "display: none;"; // Hide pre-game screen
     gameActive = true;
     timer();
 }
+
+
 
 // Opens the pop up box to answer question(s) about the state
 function openModule(id) {
@@ -96,18 +111,22 @@ function submitModule() {
     updateScore();
     stateCount++;
 
-    if (stateCount == 1) {
+    if (stateCount == 10) {
         gameOver();
     }
 
     state.setAttribute("active", "0");
 }
-
+   
 // Activates the GAME OVER state.
 function gameOver() {
     let module = document.getElementById("gameover_module");
     let finalSB = document.getElementById("final_score");
     let finalScore = currentScore + Math.floor(((min * 60) + sec) / 5);
+
+    var testscores = document.getElementById("scores");
+    var completiontime = document.getElementById("CompletionTime");
+
     let timeSB = document.getElementById("completion_time");
     let finalMin = 10;
     let finalSec = 0;
@@ -124,10 +143,14 @@ function gameOver() {
 
     if (min <= 0 && sec <= 0) {
         timeSB.innerHTML = "You ran out of time!";
+        completiontime.value = "10:00";
     }
     else {
         timeSB.innerHTML = "Completed in: " + finalMin + " minute(s) and " + finalSec + " second(s)!";
+        completiontime.value = finalMin+":"+finalSec;
     }
+    testscores.value = finalScore;
+    
 }
 
 function openScore() {
