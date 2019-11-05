@@ -159,7 +159,7 @@ button {
     margin: auto;
     padding: 3%;
     background-color: white;
-    border: 1px solid black;
+    border: 3px groove #39A96A;
     border-radius: 6px;
     display: none;
 }
@@ -278,7 +278,7 @@ button {
     margin: auto;
     padding: 3%;
     background-color: white;
-    border: 1px solid black;
+    border: 3px groove #39A96A;
     border-radius: 6px;
     display: none;
 }

@@ -27,6 +27,14 @@ function openModule(id) {
 
     // Grab the user input element and the corresponding state
     let userInput = document.getElementById("input_textbox");
+    userInput.addEventListener("keyup", function (event) {
+        if (event.keyCode === 13) {
+            // Cancel the default action, if needed
+            event.preventDefault();
+            // Trigger the button element with a click
+            document.getElementById("submit_button").click();
+        }
+    });
     let state = document.getElementById(id);
 
     // If the module is already showing for another state, end function
@@ -37,6 +45,8 @@ function openModule(id) {
     // Open Module by setting the display to inline-block and fill the state with yellow to indicate user action
     module.style.display = "inline-block";
     state.style.fill = "yellow";
+
+    userInput.select();
 
     // Load image of corresponding state
     let img = document.getElementById("state_image");
@@ -126,9 +136,14 @@ function openScore() {
 }
 
 function submitScore() {
+    //Grab module and input from user
     let module = document.getElementById("enter_score_module");
     let input = module.childNodes[1].value;
+
+    //Close module and disable enter score button
     module.style = "display: none;";
+    let button = document.getElementById("enter_score");
+    button.style = "display:none;";
 }
 
 // Function that increments and displays time.
