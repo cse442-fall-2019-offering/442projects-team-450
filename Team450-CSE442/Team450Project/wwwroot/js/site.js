@@ -20,7 +20,7 @@ function startGame() {
 }
 
 // Opens the pop up box to answer question(s) about the state
-function openModule(id) {
+function openStatesModule(id) {
 
     // Grab the module element
     let module = document.getElementById("state_module");
@@ -90,7 +90,7 @@ function exitModule() {
 }
 
 // Submits the current user input and validates the answer
-function submitModule() {
+function submitStatesModule() {
 
     // Grab the module, user input value, tries element and current state
     let module = document.getElementById("state_module");
