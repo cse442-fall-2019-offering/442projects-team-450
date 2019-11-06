@@ -101,7 +101,7 @@ function submitModule() {
     updateScore();
     stateCount++;
 
-    if (stateCount == 10) {
+    if (stateCount == 50) {
         gameOver();
     }
 
@@ -143,11 +143,13 @@ function gameOver() {
     
 }
 
+//Opens module to let user enter score into leaderboard
 function openScore() {
     let module = document.getElementById("enter_score_module");
     module.style = "display: inline-block;";
 }
 
+//Adds score to leaderboard
 function submitScore() {
     let module = document.getElementById("enter_score_module");
     let input = module.childNodes[1].value;
