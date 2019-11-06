@@ -32,7 +32,7 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.ScoreBoard) {
+@foreach (var item in Model.ScoreBoard.OrderByDescending(x=>x.Score)){
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Username)

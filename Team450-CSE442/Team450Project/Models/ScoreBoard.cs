@@ -10,7 +10,7 @@ namespace Team450Project.Models
     {
         public int ID { get; set; }
         public string Username { get; set; }
-        public string Score { get; set; }
+        public int Score { get; set; }
 
         [DataType(DataType.Date)]
         public DateTime Date { get; set; }
