@@ -35,11 +35,11 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Game Selection <span class="glyphicon glyphicon-menu-down"></span></a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" asp-page="/US_Map">US States</a>
+                                <a class="dropdown-item" asp-page="/US_States">US States</a>
                                 <div class="dropdown-divider"></div>
-                                @*<a class="dropdown-item" asp-page="/Capitals">US Capitals</a>
+                                <a class="dropdown-item" asp-page="/US_Capitals">US Capitals</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" asp-page="/Puzzle">US Map Puzzle</a>
+                                @*<a class="dropdown-item" asp-page="/Puzzle">US Map Puzzle</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" asp-page="/Class">Class Mode</a>
                                 <div class="dropdown-divider"></div>*@
@@ -68,9 +68,6 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; 2019 - Team450Project</p>
-        </footer>
     </div>
 
     <environment include="Development">
