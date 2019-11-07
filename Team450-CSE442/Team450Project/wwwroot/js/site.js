@@ -10,10 +10,22 @@ var scoreBoard = document.getElementById('score');
 var currentScore = 0;
 var gameActive = false;
 var stateCount = 0;
+var userInput = document.getElementById("input_textbox");
 
 
 // Starts the game after hitting the start button
 function startGame() {
+    // Execute a function when the user releases a key on the keyboard
+    userInput.addEventListener("keyup", function (event) {
+        // Number 13 is the "Enter" key on the keyboard
+        if (event.keyCode === 13) {
+            // Cancel the default action, if needed
+            event.preventDefault();
+            // Trigger the button element with a click
+            document.getElementById("submit_button").click();
+        }
+    });
+
     document.getElementById("pre_game_module").style = "display: none;"; // Hide pre-game screen
     gameActive = true;
     timer();
@@ -26,7 +38,6 @@ function openStatesModule(id) {
     let module = document.getElementById("state_module");
 
     // Grab the user input element and the corresponding state
-    let userInput = document.getElementById("input_textbox");
     let state = document.getElementById(id);
 
     // If the module is already showing for another state, end function
@@ -40,17 +51,6 @@ function openStatesModule(id) {
 
     //Place cursor in text box
     userInput.select();
-
-    // Execute a function when the user releases a key on the keyboard
-    userInput.addEventListener("keyup", function (event) {
-        // Number 13 is the "Enter" key on the keyboard
-        if (event.keyCode === 13) {
-            // Cancel the default action, if needed
-            event.preventDefault();
-            // Trigger the button element with a click
-            document.getElementById("submit_button").click();
-        }
-    });
 
     // Load image of corresponding state
     let img = document.getElementById("state_image");
@@ -68,7 +68,6 @@ function openCapitalModule(id) {
     let module = document.getElementById("state_module");
 
     // Grab the user input element and the corresponding state
-    let userInput = document.getElementById("input_textbox");
     let state = document.getElementById(id);
 
     // If the module is already showing for another state, end function
@@ -82,17 +81,6 @@ function openCapitalModule(id) {
 
     //Place cursor in text box
     userInput.select();
-
-    // Execute a function when the user releases a key on the keyboard
-    userInput.addEventListener("keyup", function (event) {
-        // Number 13 is the "Enter" key on the keyboard
-        if (event.keyCode === 13) {
-            // Cancel the default action, if needed
-            event.preventDefault();
-            // Trigger the button element with a click
-            document.getElementById("submit_button").click();
-        }
-    });
 
     // Load image of corresponding state
     let img = document.getElementById("state_image");
@@ -141,6 +129,7 @@ function submitStatesModule() {
     module.style.display = "none";
     updateScore();
     stateCount++;
+    console.log(stateCount);
 
     if (stateCount == 50) {
         gameOver();
