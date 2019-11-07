@@ -20,10 +20,13 @@ namespace Team450Project.Pages.Scores
         }
 
         public IList<ScoreBoard> ScoreBoard { get;set; }
+        public IList<ScoreBoard1> ScoreBoard1 { get; set; }
 
         public async Task OnGetAsync()
         {
             ScoreBoard = await _context.ScoreBoard.ToListAsync();
+            ScoreBoard1 = await _context.ScoreBoard1.ToListAsync();
         }
+      
     }
 }

@@ -20,25 +20,17 @@ namespace Team450Project.Pages.Scores
             _context = context;
         }
 
-        [BindProperty]
-        public ScoreBoard ScoreBoard { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public IActionResult OnGet()
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            ScoreBoard = await _context.ScoreBoard.FirstOrDefaultAsync(m => m.ID == id);
-
-            if (ScoreBoard == null)
-            {
-                return NotFound();
-            }
             return Page();
         }
 
+        [BindProperty]
+        public ScoreBoard1 ScoreBoard1 { get; set; }
+
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
+        // more details see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)
@@ -46,30 +38,10 @@ namespace Team450Project.Pages.Scores
                 return Page();
             }
 
-            _context.Attach(ScoreBoard).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!ScoreBoardExists(ScoreBoard.ID))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+            _context.ScoreBoard1.Add(ScoreBoard1);
+            await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
-        }
-
-        private bool ScoreBoardExists(int id)
-        {
-            return _context.ScoreBoard.Any(e => e.ID == id);
         }
     }
 }

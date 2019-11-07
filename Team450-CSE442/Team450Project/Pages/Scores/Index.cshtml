@@ -8,9 +8,43 @@
 @*<h2>Index</h2>*@
 
 @*<p>
-    <a asp-page="Create">Create New</a>
-</p>*@
-<table class="table">
+        <a asp-page="Create">Create New</a>
+    </p>*@
+<style>
+    .btn-group a {
+        background-color: #4CAF50; /* Green background */
+        border: 3px solid green; /* Green border */
+        color: white; /* White text */
+        padding: 10px 24px; /* Some padding */
+        cursor: pointer; /* Pointer/hand icon */
+        float: left; /* Float the buttons side by side */
+        width: 50%;
+    }
+
+    /* Clear floats (clearfix hack) */
+    .btn-group:after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+
+    .btn-group button:not(:last-child) {
+        border-right: none; /* Prevent double borders */
+    }
+
+    /* Add a background color on hover */
+    .btn-group button:hover {
+        background-color: #3e8e41;
+    }
+</style>
+
+<div class="btn-group">
+    <a asp-page="Create">US_STATES</a>
+    <a asp-page="Edit">US_CAPITALS</a>
+
+</div>
+
+<table class="table" style="width:100%" border="1">
     <thead>
         <tr>
             <th>
@@ -28,33 +62,55 @@
             <th>
                 Completion Time
             </th>
-            <th></th>
+
         </tr>
     </thead>
+
     <tbody>
-@foreach (var item in Model.ScoreBoard.OrderByDescending(x=>x.Score)){
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Username)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Score)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Date)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Mode)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CompletionTime)
-            </td>
-            @*<td>
-                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
-            </td>*@
-        </tr>
-}
+        @foreach (var item in Model.ScoreBoard.OrderByDescending(x => x.Score))
+        {          
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Username)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Score)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Date)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Mode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CompletionTime)
+                    </td>
+
+                </tr>
+            
+        }
     </tbody>
+        <tbody>
+            @foreach (var item in Model.ScoreBoard1.OrderByDescending(x => x.Score))
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Username)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Score)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Date)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Mode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CompletionTime)
+                    </td>
+
+                </tr>
+            }
+        </tbody>
 </table>

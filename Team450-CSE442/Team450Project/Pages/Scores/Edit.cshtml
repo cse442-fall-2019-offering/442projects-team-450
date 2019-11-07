@@ -1,55 +1,55 @@
-﻿@*@page
-@model Team450Project.Pages.Scores.EditModel
+﻿@page
+@model Team450Project.Pages.Scores.IndexModel
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Index";
 }
+<h1 align="center" style="color:darkorange;">US_CAPITALS SCORES</h1>
+<table class="table" style="width:100%" border="1">
+    <thead>
+        <tr style="font-weight:bold;">
+            <th>
+                @Html.DisplayNameFor(model => model.ScoreBoard1[0].Username)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ScoreBoard1[0].Score)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ScoreBoard1[0].Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ScoreBoard1[0].Mode)
+            </th>
+            <th>
+                Completion Time
+            </th>
 
-<h2>Edit</h2>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.ScoreBoard1.OrderByDescending(x => x.Score))
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Username)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Score)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Mode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CompletionTime)
+                </td>
 
-<h4>ScoreBoard</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="ScoreBoard.ID" />
-            <div class="form-group">
-                <label asp-for="ScoreBoard.Username" class="control-label"></label>
-                <input asp-for="ScoreBoard.Username" class="form-control" />
-                <span asp-validation-for="ScoreBoard.Username" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ScoreBoard.Score" class="control-label"></label>
-                <input asp-for="ScoreBoard.Score" class="form-control" />
-                <span asp-validation-for="ScoreBoard.Score" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ScoreBoard.Date" class="control-label"></label>
-                <input asp-for="ScoreBoard.Date" class="form-control" />
-                <span asp-validation-for="ScoreBoard.Date" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ScoreBoard.Mode" class="control-label"></label>
-                <input asp-for="ScoreBoard.Mode" class="form-control" />
-                <span asp-validation-for="ScoreBoard.Mode" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ScoreBoard.CompletionTime" class="control-label"></label>
-                <input asp-for="ScoreBoard.CompletionTime" class="form-control" />
-                <span asp-validation-for="ScoreBoard.CompletionTime" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
-        </form>
-    </div>
-</div>
-
+            </tr>
+        }
+    </tbody>
+</table>
 <div>
-    <a asp-page="./Index">Back to List</a>
+    <a asp-page="./Index">Go Back</a>
 </div>
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}*@
