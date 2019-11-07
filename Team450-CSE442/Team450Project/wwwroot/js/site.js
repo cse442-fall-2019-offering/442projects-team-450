@@ -129,7 +129,6 @@ function submitStatesModule() {
     module.style.display = "none";
     updateScore();
     stateCount++;
-    console.log(stateCount);
 
     if (stateCount == 50) {
         gameOver();
