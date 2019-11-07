@@ -161,7 +161,7 @@ function submitCapitalModule() {
     updateScore();
     stateCount++;
 
-    if (stateCount == 12) {
+    if (stateCount == 50) {
         gameOver();
     }
 
