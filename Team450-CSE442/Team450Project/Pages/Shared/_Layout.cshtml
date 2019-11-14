@@ -30,7 +30,7 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        
+
                         @* The <li> </li> below this contains the dropdown menu for the Game Selection part of the nav bar*@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Game Selection <span class="glyphicon glyphicon-menu-down"></span></a>
@@ -40,15 +40,26 @@
                                 <a class="dropdown-item" asp-page="/US_Capitals">US Capitals</a>
                                 <div class="dropdown-divider"></div>
                                 @*<a class="dropdown-item" asp-page="/Puzzle">US Map Puzzle</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" asp-page="/Class">Class Mode</a>
-                                <div class="dropdown-divider"></div>*@
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" asp-page="/Class">Class Mode</a>
+                <div class="dropdown-divider"></div>*@
                                 <a class="dropdown-item" asp-page="/Instructions">How Do I Play?</a>
                             </div>
                         </li>
 
                         <li><a asp-page="/Scores/Index">Scoreboard</a></li>
                       
+                        @* The <li> </li> below this contains the dropdown menu for the Studying part of the nav bar*@
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Studying <span class="glyphicon glyphicon-menu-down"></span></a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" asp-page="/Studying_States">US States</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" asp-page="/Studying_Capitals">US Capitals</a>
+                                <div class="dropdown-divider"></div>
+                            </div>
+                        </li>
+
                         @* The <li> </li> below this contains the dropdown menu for the Further Information part of the nav bar*@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Further Information <span class="glyphicon glyphicon-menu-down"></span></a>

@@ -28,6 +28,28 @@ var userInput = document.getElementById("input_textbox");
 
 // Starts the game after hitting the start button
 function startGame() {
+    // Submit answer when user presses enter
+    userInput.addEventListener("keyup", function (event) {
+        if (event.key == "Enter") {
+            // Trigger the button element with a click
+            document.getElementById("submit_button").click();
+        }
+    });
+    // Exit module when user presses escape
+    document.addEventListener("keyup", function (event) {
+        if (event.key == "Escape") {
+            // Trigger the button element with a click
+            document.getElementById("back_button").click();
+        }
+    });
+
+    document.getElementById("pre_game_module").style = "display: none;"; // Hide pre-game screen
+    gameActive = true;
+    timer();
+}
+
+// Starts the game after hitting the start button
+function startStudying() {
     // Execute a function when the user releases a key on the keyboard
     userInput.addEventListener("keyup", function (event) {
         // Number 13 is the "Enter" key on the keyboard
@@ -41,7 +63,7 @@ function startGame() {
 
     document.getElementById("pre_game_module").style = "display: none;"; // Hide pre-game screen
     gameActive = true;
-    timer();
+
 }
 
 
@@ -77,6 +99,34 @@ function openStatesModule(id) {
     userInput.value = "";
 }
 
+function openStatesStudying(id) {
+
+    // Grab the module element
+    let module = document.getElementById("state_module");
+    // Grab the user input element and the corresponding state
+    let state = document.getElementById(id);
+
+    // If the module is already showing for another state, end function
+    if (module.style.display == "inline-block" || state.getAttribute("active") != "1" || !gameActive) return;
+
+    document.getElementById("state_name").childNodes[1].innerHTML = document.getElementById(id).getAttribute("state-name");
+
+    currentID = id; // Update the id variable to the current selected state id
+
+    // Open Module by setting the display to inline-block and fill the state with yellow to indicate user action
+    module.style.display = "inline-block";
+    state.style.fill = "yellow";
+
+    // Load image of corresponding state
+    let img = document.getElementById("state_image");
+    let stateName = state.getAttribute("state-name").toLowerCase();
+    let imgSrc = "/images/" + stateName.replace(" ", "-") + ".jpg";
+    img.setAttribute("src", imgSrc);
+
+    // Set user input to empty string
+    userInput.value = "";
+}
+
 function openCapitalModule(id) {
 
     // Grab the module element
@@ -96,6 +146,34 @@ function openCapitalModule(id) {
 
     //Place cursor in text box
     userInput.select();
+
+    // Load image of corresponding state
+    let img = document.getElementById("state_image");
+    let stateName = state.getAttribute("state-name").toLowerCase();
+    let imgSrc = "/images/" + stateName.replace(" ", "-") + ".jpg";
+    img.setAttribute("src", imgSrc);
+
+    // Set user input to empty string
+    userInput.value = "";
+}
+
+function openCapitalsStudying(id) {
+
+    // Grab the module element
+    let module = document.getElementById("state_module");
+    // Grab the user input element and the corresponding state
+    let state = document.getElementById(id);
+
+    // If the module is already showing for another state, end function
+    if (module.style.display == "inline-block" || state.getAttribute("active") != "1" || !gameActive) return;
+
+    document.getElementById("capital_name").childNodes[1].innerHTML = document.getElementById(id).getAttribute("state-capital");
+
+    currentID = id; // Update the id variable to the current selected state id
+
+    // Open Module by setting the display to inline-block and fill the state with yellow to indicate user action
+    module.style.display = "inline-block";
+    state.style.fill = "yellow";
 
     // Load image of corresponding state
     let img = document.getElementById("state_image");
@@ -189,7 +267,10 @@ function submitCapitalModule() {
 function gameOver() {
     let module = document.getElementById("gameover_module");
     let finalSB = document.getElementById("final_score");
-    let finalScore = currentScore + Math.floor(((min * 60) + sec) / 5);
+    //If score<0 make final score = 0
+    let sign = 1;
+    if (currentScore < 0) sign = 0;
+    let finalScore = currentScore + Math.floor(((min * 60) + sec) / 5) * sign;
 
     var testscores = document.getElementById("scores");
     var completiontime = document.getElementById("CompletionTime");
