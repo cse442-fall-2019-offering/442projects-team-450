@@ -283,9 +283,12 @@ button {
     display: none;
 }
 
-#enter_score_module input {
+#enter_score_module input{
     width: 80%;
-    left: 10%;
+    margin:auto;
+    align-content:center;
+
+
 }
 
 #enter_score_module button {

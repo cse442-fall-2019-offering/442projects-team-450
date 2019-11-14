@@ -27,27 +27,31 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model.ScoreBoard.OrderByDescending(x => x.Score))
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Username)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Score)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Date)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Mode)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CompletionTime)
-                </td>
-               
-            </tr>
-        }
+
+
+            @foreach (var item in Model.ScoreBoard.OrderByDescending(x => x.Score).Take(20))
+            {            
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Username)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Score)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Date)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Mode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CompletionTime)
+                    </td>
+
+                </tr>
+                
+            }
+
     </tbody>
 </table>
 <div>

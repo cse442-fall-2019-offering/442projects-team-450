@@ -67,8 +67,8 @@
     </thead>
 
     <tbody>
-        @foreach (var item in Model.ScoreBoard.OrderByDescending(x => x.Score))
-        {          
+        @foreach (var item in Model.ScoreBoard.OrderByDescending(x => x.Score).Take(20))
+        {
                 <tr>
                     <td>
                         @Html.DisplayFor(modelItem => item.Username)
@@ -87,11 +87,11 @@
                     </td>
 
                 </tr>
-            
+
         }
     </tbody>
         <tbody>
-            @foreach (var item in Model.ScoreBoard1.OrderByDescending(x => x.Score))
+            @foreach (var item in Model.ScoreBoard1.OrderByDescending(x => x.Score).Take(20))
             {
                 <tr>
                     <td>
