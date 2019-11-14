@@ -31,6 +31,24 @@ function startGame() {
     timer();
 }
 
+// Starts the game after hitting the start button
+function startStudying() {
+    // Execute a function when the user releases a key on the keyboard
+    userInput.addEventListener("keyup", function (event) {
+        // Number 13 is the "Enter" key on the keyboard
+        if (event.keyCode === 13) {
+            // Cancel the default action, if needed
+            event.preventDefault();
+            // Trigger the button element with a click
+            document.getElementById("submit_button").click();
+        }
+    });
+
+    document.getElementById("pre_game_module").style = "display: none;"; // Hide pre-game screen
+    gameActive = true;
+
+}
+
 // Opens the pop up box to answer question(s) about the state
 function openStatesModule(id) {
 
@@ -62,6 +80,34 @@ function openStatesModule(id) {
     userInput.value = "";
 }
 
+function openStatesStudying(id) {
+
+    // Grab the module element
+    let module = document.getElementById("state_module");
+    // Grab the user input element and the corresponding state
+    let state = document.getElementById(id);
+
+    // If the module is already showing for another state, end function
+    if (module.style.display == "inline-block" || state.getAttribute("active") != "1" || !gameActive) return;
+
+    document.getElementById("state_name").childNodes[1].innerHTML = document.getElementById(id).getAttribute("state-name");
+
+    currentID = id; // Update the id variable to the current selected state id
+
+    // Open Module by setting the display to inline-block and fill the state with yellow to indicate user action
+    module.style.display = "inline-block";
+    state.style.fill = "yellow";
+
+    // Load image of corresponding state
+    let img = document.getElementById("state_image");
+    let stateName = state.getAttribute("state-name").toLowerCase();
+    let imgSrc = "/images/" + stateName.replace(" ", "-") + ".jpg";
+    img.setAttribute("src", imgSrc);
+
+    // Set user input to empty string
+    userInput.value = "";
+}
+
 function openCapitalModule(id) {
 
     // Grab the module element
@@ -81,6 +127,34 @@ function openCapitalModule(id) {
 
     //Place cursor in text box
     userInput.select();
+
+    // Load image of corresponding state
+    let img = document.getElementById("state_image");
+    let stateName = state.getAttribute("state-name").toLowerCase();
+    let imgSrc = "/images/" + stateName.replace(" ", "-") + ".jpg";
+    img.setAttribute("src", imgSrc);
+
+    // Set user input to empty string
+    userInput.value = "";
+}
+
+function openCapitalsStudying(id) {
+
+    // Grab the module element
+    let module = document.getElementById("state_module");
+    // Grab the user input element and the corresponding state
+    let state = document.getElementById(id);
+
+    // If the module is already showing for another state, end function
+    if (module.style.display == "inline-block" || state.getAttribute("active") != "1" || !gameActive) return;
+
+    document.getElementById("capital_name").childNodes[1].innerHTML = document.getElementById(id).getAttribute("state-capital");
+
+    currentID = id; // Update the id variable to the current selected state id
+
+    // Open Module by setting the display to inline-block and fill the state with yellow to indicate user action
+    module.style.display = "inline-block";
+    state.style.fill = "yellow";
 
     // Load image of corresponding state
     let img = document.getElementById("state_image");
