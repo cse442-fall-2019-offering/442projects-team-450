@@ -15,14 +15,18 @@ var userInput = document.getElementById("input_textbox");
 
 // Starts the game after hitting the start button
 function startGame() {
-    // Execute a function when the user releases a key on the keyboard
+    // Submit answer when user presses enter
     userInput.addEventListener("keyup", function (event) {
-        // Number 13 is the "Enter" key on the keyboard
-        if (event.keyCode === 13) {
-            // Cancel the default action, if needed
-            event.preventDefault();
+        if (event.key == "Enter") {
             // Trigger the button element with a click
             document.getElementById("submit_button").click();
+        }
+    });
+    // Exit module when user presses escape
+    document.addEventListener("keyup", function (event) {
+        if (event.key == "Escape") {
+            // Trigger the button element with a click
+            document.getElementById("back_button").click();
         }
     });
 
