@@ -177,7 +177,7 @@ function gameOver() {
     //If score<0 make final score = 0
     let sign = 1;
     if (currentScore < 0) sign = 0;
-    let finalScore = currentScore + Math.floor(((min * 60) + sec) / 5) * sign;
+    let finalScore = (currentScore + Math.floor(((min * 60) + sec) / 5)) * sign;
 
     let timeSB = document.getElementById("completion_time");
     let finalMin = 10;
