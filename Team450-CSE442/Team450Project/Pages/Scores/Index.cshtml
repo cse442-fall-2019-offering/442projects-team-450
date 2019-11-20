@@ -11,38 +11,109 @@
         <a asp-page="Create">Create New</a>
     </p>*@
 <style>
-    .btn-group a {
-        background-color: #4CAF50; /* Green background */
-        border: 3px solid green; /* Green border */
-        color: white; /* White text */
-        padding: 10px 24px; /* Some padding */
-        cursor: pointer; /* Pointer/hand icon */
-        float: left; /* Float the buttons side by side */
-        width: 50%;
+
+    /*.bg-text1 {
+       
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0, 0);
+        color: white;
+        font-weight: bold;
+        border: 0px solid #f1f1f1;
+        position: absolute;
+        top: 10% !important;
+        left: 10% !important;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        width: 80%;
+        padding-left: 35em;
+        text-align: center;
+        
     }
 
-    /* Clear floats (clearfix hack) */
+    #playButton1 {
+        display: inline-block;
+        padding: 10px 24px;
+        font-size: 16px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        outline: none;
+        color: #fff;
+        background-color: #4CAF50;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px #999;
+        text-decoration: none;
+        float:left;
+
+     
+    }*/
+
+    .btn-group a {
+        display: inline-block;
+        background-color: #4CAF50;  
+        color: white;  
+        padding: 12px 35px; 
+        cursor: pointer; 
+        float: left;  
+        width: 50%;
+        text-decoration: none;
+        box-shadow: 0 9px #999;
+        font-weight: bold;
+        border-radius: 15px;
+        border: none;
+        font-size: 20px;
+  
+       
+    }
+
+
     .btn-group:after {
         content: "";
         clear: both;
         display: table;
     }
 
-    .btn-group button:not(:last-child) {
-        border-right: none; /* Prevent double borders */
+    a:hover {
+        background-color: #3e8e41
     }
 
-    /* Add a background color on hover */
+    a:active {
+        background-color: #3e8e41;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+    }
+
+    /*.btn-group button:not(:last-child) {
+        border-right: none;  
+    }
+
+
     .btn-group button:hover {
         background-color: #3e8e41;
-    }
+    }*/
+   
 </style>
 
-<div class="btn-group">
-    <a asp-page="States">US_STATES</a>
-    <a asp-page="Capitals">US_CAPITALS</a>
+@*<br />
 
+<div class="bg-text1">
+    <div class="flex-center">
+        <p><button id="playButton1" onclick="window.location.href='/States'">US_STATES</button></p>
+        <p><button id="playButton1" onclick="window.location.href='/Capitals'">US_CAPITALS</button></p>
+    </div>
 </div>
+<br />
+<br />*@
+<br />
+<div class="btn-group">
+        <a asp-page="States">US_States</a>
+      
+        <a asp-page="Capitals">US_Capitals</a>
+
+    </div>
+<br />
+<br />
 
 <table class="table" style="width:100%" border="1">
     <thead>
@@ -69,48 +140,48 @@
     <tbody>
         @foreach (var item in Model.ScoreBoard.OrderByDescending(x => x.Score).Take(20))
         {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Username)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Score)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Date)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Mode)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.CompletionTime)
-                    </td>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Username)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Score)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Mode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CompletionTime)
+                </td>
 
-                </tr>
+            </tr>
 
         }
     </tbody>
-        <tbody>
-            @foreach (var item in Model.ScoreBoard1.OrderByDescending(x => x.Score).Take(20))
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Username)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Score)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Date)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Mode)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.CompletionTime)
-                    </td>
+    <tbody>
+        @foreach (var item in Model.ScoreBoard1.OrderByDescending(x => x.Score).Take(20))
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Username)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Score)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Mode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CompletionTime)
+                </td>
 
-                </tr>
-            }
-        </tbody>
+            </tr>
+        }
+    </tbody>
 </table>
