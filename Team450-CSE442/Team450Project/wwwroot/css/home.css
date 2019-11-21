@@ -10,12 +10,13 @@ body, html {
 
 .bg-image {
    
-    filter: blur(4px);
+    height: 100000px;
+    /*filter: blur(4px);
     -webkit-filter: blur(4px);
-    height: 100%;
+    height: auto;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover;*/
 }
 
 
