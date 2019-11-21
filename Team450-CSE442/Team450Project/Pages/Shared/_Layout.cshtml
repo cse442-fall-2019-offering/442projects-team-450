@@ -47,8 +47,8 @@
                             </div>
                         </li>
 
-                        <li><a asp-page="Scores/Index">Scoreboard</a></li>
-
+                        <li><a asp-page="/Scores/Index">Scoreboard</a></li>
+                      
                         @* The <li> </li> below this contains the dropdown menu for the Studying part of the nav bar*@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Studying <span class="glyphicon glyphicon-menu-down"></span></a>
@@ -78,7 +78,6 @@
 
     <div class="container body-content">
         @RenderBody()
-        <hr />
     </div>
 
     <environment include="Development">

@@ -13,6 +13,19 @@ var stateCount = 0;
 var userInput = document.getElementById("input_textbox");
 
 
+    var date = new Date();
+    var day = date.getDate();
+    var month = date.getMonth() + 1;
+    var year = date.getFullYear();
+
+    if (month < 10) month = "0" + month;
+    if (day < 10) day = "0" + day;
+
+    var today = year + "-" + month + "-" + day;
+    document.getElementById('theDate').value = today;
+
+
+
 // Starts the game after hitting the start button
 function startGame() {
     // Submit answer when user presses enter
@@ -52,6 +65,8 @@ function startStudying() {
     gameActive = true;
 
 }
+
+
 
 // Opens the pop up box to answer question(s) about the state
 function openStatesModule(id) {
@@ -257,6 +272,9 @@ function gameOver() {
     if (currentScore < 0) sign = 0;
     let finalScore = (currentScore + Math.floor(((min * 60) + sec) / 5)) * sign;
 
+    var testscores = document.getElementById("scores");
+    var completiontime = document.getElementById("CompletionTime");
+
     let timeSB = document.getElementById("completion_time");
     let finalMin = 10;
     let finalSec = 0;
@@ -273,10 +291,27 @@ function gameOver() {
 
     if (min <= 0 && sec <= 0) {
         timeSB.innerHTML = "You ran out of time!";
+        completiontime.value = "10:00";
     }
     else {
         timeSB.innerHTML = "Completed in: " + finalMin + " minute(s) and " + finalSec + " second(s)!";
+        completiontime.value = finalMin+":"+finalSec;
     }
+    testscores.value = finalScore;
+    
+}
+
+//Opens module to let user enter score into leaderboard
+function openScore() {
+    let module = document.getElementById("enter_score_module");
+    module.style = "display: inline-block;";
+}
+
+//Adds score to leaderboard
+function submitScore() {
+    let module = document.getElementById("enter_score_module");
+    let input = module.childNodes[1].value;
+    module.style = "display: none;";
 }
 
 // Function that increments and displays time.
