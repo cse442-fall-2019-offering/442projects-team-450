@@ -9,14 +9,12 @@ body, html {
 }
 
 .bg-image {
-   
-    height: 100000px;
-    /*filter: blur(4px);
+    filter: blur(4px);
     -webkit-filter: blur(4px);
     height: auto;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;*/
+    background-size: cover;
 }
 
 
@@ -50,6 +48,12 @@ body, html {
     border-radius: 15px;
     box-shadow: 0 9px #999;
     text-decoration: none;
+}
+
+#us-map-background {
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
 }
 
 
