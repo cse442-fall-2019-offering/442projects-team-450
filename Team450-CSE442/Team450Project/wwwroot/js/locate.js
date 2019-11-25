@@ -1,4 +1,12 @@
 ﻿
+var timerHTML = document.getElementById("timerHTML"),
+    sec = 0, min = 10,
+    t;
+var scoreBoard = document.getElementById('score');
+var currentScore = 0;
+var gameActive = false;
+var stateCount = 0;
+
 function startGame() {
     document.getElementById("pre_game_module").style = "display: none;"; // Hide pre-game screen
     timer();
