@@ -2,28 +2,13 @@
 body, html {
     height: auto;
     width: auto;
-}
-
-* {
-    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .bg-image {
-   
     filter: blur(4px);
-    -webkit-filter: blur(4px);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    height: auto;
-    width: auto;
+    width: 100%;
 }
-#us-map-background {
-    box-sizing: border-box;
-    max-height: 99%;
-    max-width: 99%;
-}
-
 
 .bg-text {
     background-color: rgb(0,0,0);
