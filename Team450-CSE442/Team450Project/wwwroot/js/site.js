@@ -3,14 +3,14 @@
 
 // Write your Javascript code.
 var currentID = null;
-var timerHTML = document.getElementById("timerHTML"),
+let timerHTML = document.getElementById("timerHTML"),
     sec = 0, min = 10,
     t;
 var scoreBoard = document.getElementById('score');
 var currentScore = 0;
 var gameActive = false;
 var stateCount = 0;
-var userInput = document.getElementById("input_textbox");
+let userInput = document.getElementById("input_textbox");
 
 
     var date = new Date();
@@ -214,7 +214,7 @@ function submitStatesModule() {
         currentScore -= 2;
     }
     else {
-        // If the user was correct, exit the module, turn the state green and reset the tries_left variable to 3
+        // If the user was correct, exit the module and turn the state green 
         state.style.fill = "green";
         currentScore += 5;
     }
