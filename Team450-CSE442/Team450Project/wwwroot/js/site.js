@@ -13,16 +13,20 @@ var stateCount = 0;
 let userInput = document.getElementById("input_textbox");
 
 
-    var date = new Date();
-    var day = date.getDate();
-    var month = date.getMonth() + 1;
-    var year = date.getFullYear();
+var date = new Date();
+var day = date.getDate();
+var month = date.getMonth() + 1;
+var year = date.getFullYear();
 
-    if (month < 10) month = "0" + month;
-    if (day < 10) day = "0" + day;
+if (month < 10) month = "0" + month;
+if (day < 10) day = "0" + day;
 
-    var today = year + "-" + month + "-" + day;
-    document.getElementById('theDate').value = today;
+var today = year + "-" + month + "-" + day;
+var getTheDate = document.getElementById('theDate');
+
+if (getTheDate) { //I dont know how we needed this if statement to fix the null value  problem.
+    getTheDate.value = today;
+};
 
 
 
@@ -343,7 +347,10 @@ function timer() {
 }
 
 function updateScore() {
-    scoreBoard.innerHTML = "Score: " + currentScore;
+    var scoreBoard1 = "Score: " + currentScore;
+    if (scoreBoard) {   //Need this statement to fix the Console cannot set null error.
+        scoreBoard.innerHTML = scoreBoard1;
+    }
 }
 
 updateScore();
