@@ -9,37 +9,40 @@ var states = Array.from(document.getElementsByClassName("us_state"));
 var stateSelector = document.getElementById("stateSelector");
 var currState;
 
-
+//Start the state locate game mode
 function startLocate() {
     document.getElementById("pre_game_module").style = "display: none;"; // Hide pre-game screen
-    currState = Math.floor(Math.random() * states.length);
-    stateSelector.innerHTML = states[currState].getAttribute("state-name");
-    timerLocate();
+    currState = Math.floor(Math.random() * states.length); // Get random state number between 0 and 49
+    stateSelector.innerHTML = states[currState].getAttribute("state-name"); // Display current state on screen
+    timerLocate(); // Start the timer for the locate mode
 }
 
+// Process user state click
 function selectState(id) {
+    // Get state that user clicked
     let state = document.getElementById(id);
 
+    // Check if selected state matches prompted stae
     if (id == states[currState].getAttribute("id")) {
-        state.style.fill = "green";
-        states.splice(currState, 1);
-        currentScore += 5;
+        state.style.fill = "green"; // Fill green if correct
+        states.splice(currState, 1); // Remove from states array
+        currentScore += 5; // Increase score by 5
     }
-    else if (state.style.fill == "green"){
+    else if (state.style.fill == "green"){ // If state was already selected, do not process anything and return
         return;
     }
     else {
-        currentScore -= 2;
+        currentScore -= 2; // If incorrect state was selected, decrease score by 2
     }
 
-    if (states.length < 1) {
+    if (states.length < 1) { // If state array is empty (all states have been selected) then end the game
         locateGameOver();
     }
     else {
-        currState = Math.floor(Math.random() * states.length);
-        stateSelector.innerHTML = states[currState].getAttribute("state-name");
+        currState = Math.floor(Math.random() * states.length); // Get new random state number
+        stateSelector.innerHTML = states[currState].getAttribute("state-name"); // Display new stae
     }
-    updateScore();
+    updateScore(); // Update the score displayed on the page
 }
 
 // Activates the GAME OVER state.
@@ -121,6 +124,7 @@ function timerLocate() {
     }
 }
 
+// Updates the score displayed on the page
 function updateScore() {
     scoreBoard.innerHTML = "Score: " + currentScore;
 }
