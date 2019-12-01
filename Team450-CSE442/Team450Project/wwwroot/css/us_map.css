@@ -234,6 +234,16 @@ button {
     z-index: 2;
 }
 
+#stateSelector {
+    font-family: 'Comic Sans MS';
+    font-size: 4vmin;
+    position: absolute;
+    left: 2%;
+    top: 28%;
+    z-index: 2;
+    color: #4b4;
+}
+
 #state_image_container {
     margin: auto;
     height: 60%;
