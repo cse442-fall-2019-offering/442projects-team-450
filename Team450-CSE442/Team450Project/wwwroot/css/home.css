@@ -2,22 +2,13 @@
 body, html {
     height: auto;
     width: auto;
-}
-
-* {
-    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .bg-image {
-   
     filter: blur(4px);
-    -webkit-filter: blur(4px);
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    width: 100%;
 }
-
 
 .bg-text {
     background-color: rgb(0,0,0);

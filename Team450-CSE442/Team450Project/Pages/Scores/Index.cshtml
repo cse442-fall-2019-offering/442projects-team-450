@@ -5,12 +5,62 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
 
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
-<table class="table">
+<style>
+
+
+    .btn-group a {
+        display: inline-block;
+        background-color: #4CAF50;  
+        color: white;  
+        padding: 12px 36px; 
+        cursor: pointer; 
+        float: left;  
+        /*width: 50%;*/
+        text-decoration: none;
+        box-shadow: 0 9px #999;
+        font-weight: bold;
+        border-radius: 12px;
+        border: none;
+        font-size: 20px;
+  
+       
+    }
+
+
+    .btn-group:after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+
+    a:hover {
+        background-color: #3e8e41
+    }
+
+    a:active {
+        background-color: #3e8e41;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+    }
+
+   
+   
+</style>
+
+<br />
+<div class="btn-group">
+    <a asp-page="States">US_States</a>
+
+    <a asp-page="Capitals">US_Capitals</a>
+
+    <a asp-page="US_Locate">US_State_Locate</a>
+
+</div>
+<br />
+<br />
+
+<table class="table" style="width:100%" border="1">
     <thead>
         <tr>
             <th>
@@ -26,35 +76,80 @@
                 @Html.DisplayNameFor(model => model.ScoreBoard[0].Mode)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ScoreBoard[0].CompletionTime)
+                Completion Time
             </th>
-            <th></th>
+
         </tr>
     </thead>
+
     <tbody>
-@foreach (var item in Model.ScoreBoard) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Username)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Score)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Date)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Mode)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CompletionTime)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model.ScoreBoard.OrderByDescending(x => x.Score).Take(20))
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Username)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Score)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Mode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CompletionTime)
+                </td>
+
+            </tr>
+
+        }
+    </tbody>
+    <tbody>
+        @foreach (var item in Model.ScoreBoard1.OrderByDescending(x => x.Score).Take(20))
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Username)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Score)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Mode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CompletionTime)
+                </td>
+
+            </tr>
+        }
+    </tbody>
+    <tbody>
+        @foreach (var item in Model.ScoreBoard2.OrderByDescending(x => x.Score).Take(20))
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Username)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Score)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Mode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CompletionTime)
+                </td>
+
+            </tr>
+        }
     </tbody>
 </table>

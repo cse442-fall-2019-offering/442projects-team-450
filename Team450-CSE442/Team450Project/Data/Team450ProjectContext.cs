@@ -15,5 +15,8 @@ namespace Team450Project.Data
         }
 
         public DbSet<Team450Project.Models.ScoreBoard> ScoreBoard { get; set; }
+        public DbSet<Team450Project.Models.ScoreBoard1> ScoreBoard1 { get; set; }
+        public DbSet<Team450Project.Models.ScoreBoard2> ScoreBoard2 { get; set; }
     }
+
 }

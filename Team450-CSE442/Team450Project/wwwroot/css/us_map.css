@@ -1,22 +1,17 @@
 ﻿body {
-    font-family: 'Comic Sans MS';
     text-align: center;
 }
 
 #us-map {
     display: block;
     position: absolute;
-    top: 7%;
+    top: 9%;
     width: 70%;
     left: 15%;
-    height: 93%;
-    border: 2px groove black;
+    height: 90%;
 }
 
 path:hover, circle:hover {
-    stroke: !important;
-    stroke-width: 2px;
-    stroke-linejoin: round;
     fill: blue !important;
     cursor: pointer;
 }
@@ -111,6 +106,7 @@ button {
 }
 
 #pre_game_module {
+    font-family: 'Comic Sans MS';
     font-size: 2vmin;
     text-align: left;
     top: 20%;
@@ -131,6 +127,7 @@ button {
 }
 
 #state_module {
+    font-family: 'Comic Sans MS';
     font-size: 3vmin;
     top: 20%;
     width: 40%;
@@ -147,6 +144,7 @@ button {
 }
 
 #gameover_module {
+    font-family: 'Comic Sans MS';
     font-size: 3vmin;
     top: 20%;
     width: 40%;
@@ -176,10 +174,11 @@ button {
 
 #mainmenu_button {
     position: absolute;
+    font-size: 2.5vmin;
     left: 3%;
     bottom: 3%;
-    width: 30%;
-    height: 20%;
+    width: 20%;
+    height: 12%;
 }
 
 #submit_button {
@@ -192,10 +191,21 @@ button {
 
 #tryagain_button {
     position: absolute;
+    font-size: 2.5vmin;
     right: 3%;
     bottom: 3%;
-    width: 30%;
-    height: 20%;
+    width: 20%;
+    height: 12%;
+}
+
+#enter_score {
+    position: absolute;
+    font-size: 2vmin;
+    left: 38%;
+    bottom: 3%;
+    width: 24%;
+    height: 12%;
+    
 }
 
 #start_button {
@@ -207,6 +217,7 @@ button {
 }
 
 #timerHTML {
+    font-family: 'Comic Sans MS';
     font-size: 4vmin;
     position: absolute;
     top: 15%;
@@ -215,11 +226,22 @@ button {
 }
 
 #score {
+    font-family: 'Comic Sans MS';
     font-size: 3vmin;
     position: absolute;
     left: 2%;
     top: 22%;
     z-index: 2;
+}
+
+#stateSelector {
+    font-family: 'Comic Sans MS';
+    font-size: 4vmin;
+    position: absolute;
+    left: 2%;
+    top: 28%;
+    z-index: 2;
+    color: #4b4;
 }
 
 #state_image_container {
@@ -249,4 +271,37 @@ button {
     width: 60%;
     left: 20%;
 
+}
+
+#enter_score_module {
+    font-size: 3vmin;
+    top: 30%;
+    width: 20%;
+    left: 40%;
+    height: 25%;
+    z-index: 3;
+    position: absolute;
+    margin: auto;
+    padding: 3%;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 6px;
+    display: none;
+}
+
+#enter_score_module input{
+    width: 80%;
+    margin:auto;
+    align-content:center;
+
+
+}
+
+#enter_score_module button {
+    position: absolute;
+    left: 25%;
+    bottom: 5%;
+    width: 50%;
+    height: 20%;
+    font-size: 2vmin;
 }

@@ -1,0 +1,55 @@
+﻿@page
+@model Team450Project.Pages.Scores.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+<h1 align="center" style="color:darkorange;">US_CAPITALS SCORES</h1>
+<table class="table" style="width:100%" border="1">
+    <thead>
+        <tr style="font-weight:bold;">
+            <th>
+                @Html.DisplayNameFor(model => model.ScoreBoard1[0].Username)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ScoreBoard1[0].Score)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ScoreBoard1[0].Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ScoreBoard1[0].Mode)
+            </th>
+            <th>
+                Completion Time
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.ScoreBoard1.OrderByDescending(x => x.Score).Take(20))
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Username)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Score)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Mode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CompletionTime)
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+<div>
+    <a asp-page="./Index">Go Back</a>
+</div>
