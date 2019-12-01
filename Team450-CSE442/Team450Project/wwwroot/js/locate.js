@@ -93,6 +93,10 @@ function locateGameOver() {
     }
     else {
         timeSB.innerHTML = "Completed in: " + finalMin + " minute(s) and " + finalSec + " second(s)!";
+        if (finalSec < 10) {
+            completiontime.value = finalMin + ":0" + finalSec;
+        }
+        else
         completiontime.value = finalMin + ":" + finalSec;
     }
     testscores.value = finalScore;
