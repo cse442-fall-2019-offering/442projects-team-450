@@ -9,6 +9,22 @@ var states = Array.from(document.getElementsByClassName("us_state"));
 var stateSelector = document.getElementById("stateSelector");
 var currState;
 
+
+var date = new Date();
+var day = date.getDate();
+var month = date.getMonth() + 1;
+var year = date.getFullYear();
+
+if (month < 10) month = "0" + month;
+if (day < 10) day = "0" + day;
+
+var today = year + "-" + month + "-" + day;
+var getTheDate = document.getElementById('theDate');
+
+if (getTheDate) { //I dont know how we needed this if statement to fix the null value  problem.
+    getTheDate.value = today;
+};
+
 //Start the state locate game mode
 function startLocate() {
     document.getElementById("pre_game_module").style = "display: none;"; // Hide pre-game screen
@@ -126,7 +142,11 @@ function timerLocate() {
 
 // Updates the score displayed on the page
 function updateScore() {
-    scoreBoard.innerHTML = "Score: " + currentScore;
+    //scoreBoard.innerHTML = "Score: " + currentScore;
+    var scoreBoard1 = "Score: " + currentScore;
+    if (scoreBoard) {   //Need this statement to fix the Console cannot set null error.
+        scoreBoard.innerHTML = scoreBoard1;
+    }
 }
 
 updateScore();

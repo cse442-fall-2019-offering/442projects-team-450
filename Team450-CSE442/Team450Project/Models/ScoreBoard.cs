@@ -29,5 +29,17 @@ namespace Team450Project.Models
         public string Mode { get; set; }
         public string CompletionTime { get; set; }
     }
+    public class ScoreBoard2
+    {
+        public int ID { get; set; }
+        public string Username { get; set; }
+        public int Score { get; set; }
+
+        [DataType(DataType.Date)]
+        public DateTime Date { get; set; }
+        public string Mode { get; set; }
+        public string CompletionTime { get; set; }
+    }
+
 
 }
